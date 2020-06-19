@@ -2,6 +2,7 @@ package org.simple.clinic.registration.location
 
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import io.reactivex.disposables.Disposable
 import io.reactivex.subjects.PublishSubject
 import org.junit.After
@@ -34,6 +35,7 @@ class RegistrationLocationPermissionScreenControllerTest {
     uiEvents.onNext(RequestLocationPermission(permission = Optional.of(GRANTED)))
 
     verify(screen).openFacilitySelectionScreen()
+    verifyNoMoreInteractions(screen)
   }
 
   private fun setupController() {
