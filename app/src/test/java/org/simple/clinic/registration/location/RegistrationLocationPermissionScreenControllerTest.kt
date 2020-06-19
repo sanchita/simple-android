@@ -8,7 +8,7 @@ import org.junit.After
 import org.junit.Rule
 import org.junit.Test
 import org.simple.clinic.platform.util.RuntimePermissionResult.GRANTED
-import org.simple.clinic.util.Just
+import org.simple.clinic.util.Optional
 import org.simple.clinic.util.RxErrorsRule
 import org.simple.clinic.widgets.UiEvent
 
@@ -31,7 +31,7 @@ class RegistrationLocationPermissionScreenControllerTest {
   fun `when location permission is received then facility selection screen should be opened`() {
     setupController()
 
-    uiEvents.onNext(RequestLocationPermission(permission = Just(GRANTED)))
+    uiEvents.onNext(RequestLocationPermission(permission = Optional.of(GRANTED)))
 
     verify(screen).openFacilitySelectionScreen()
   }
