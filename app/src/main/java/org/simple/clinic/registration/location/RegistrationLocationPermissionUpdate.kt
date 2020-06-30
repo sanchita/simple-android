@@ -14,7 +14,7 @@ class RegistrationLocationPermissionUpdate : Update<RegistrationLocationPermissi
     return when (event) {
       is RequestLocationPermission -> {
         if (event.isPermissionGranted)
-          dispatch(OpenFacilitySelectionScreen as RegistrationLocationPermissionEffect)
+          dispatch(OpenFacilitySelectionScreen(model.ongoingRegistrationEntry) as RegistrationLocationPermissionEffect)
         else
           noChange()
       }
