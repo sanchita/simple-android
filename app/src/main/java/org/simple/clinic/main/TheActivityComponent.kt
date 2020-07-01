@@ -97,7 +97,8 @@ interface TheActivityComponent :
     RegistrationPinScreen.Injector,
     RegistrationConfirmPinScreen.Injector,
     RegistrationLocationPermissionScreen.Injector,
-    RegistrationFacilitySelectionScreen.Injector {
+    RegistrationFacilitySelectionScreen.Injector,
+    RegistrationLoadingScreen.Injector {
   fun inject(target: TheActivity)
   fun inject(target: HomeScreen)
   fun inject(target: AppLockScreen)
@@ -127,7 +128,6 @@ interface TheActivityComponent :
   fun inject(target: RecentPatientsScreen)
   fun inject(target: PatientSearchResultItemView)
   fun inject(target: AllPatientsInFacilityView)
-  fun inject(target: RegistrationLoadingScreen)
   fun inject(target: LoggedOutOfDeviceDialog)
   fun inject(target: ShortCodeSearchResultScreen)
   fun inject(target: EditPatientScreen)
