@@ -19,7 +19,6 @@ import org.simple.clinic.util.Just
 import org.simple.clinic.util.None
 import org.simple.clinic.util.Optional
 import org.simple.clinic.util.filterAndUnwrapJust
-import org.simple.clinic.util.toOptional
 import org.threeten.bp.Instant
 import timber.log.Timber
 import java.util.UUID
@@ -98,10 +97,6 @@ class UserSession @Inject constructor(
 
   fun saveOngoingRegistrationEntry(entry: OngoingRegistrationEntry) {
     this.ongoingRegistrationEntry = entry
-  }
-
-  fun ongoingRegistrationEntry(): Optional<OngoingRegistrationEntry> {
-    return ongoingRegistrationEntry.toOptional()
   }
 
   fun clearOngoingRegistrationEntry() {
